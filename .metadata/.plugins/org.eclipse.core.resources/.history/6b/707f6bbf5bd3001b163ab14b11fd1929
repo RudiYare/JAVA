@@ -1,0 +1,70 @@
+package lk;
+import java.util.Scanner;
+class A{
+		  private int x;
+		  A(){
+			  x = -1;
+		  }
+		  public int Get_X() {
+			return x;  
+		  }
+		  public void Set_X(int temp) {
+			  x = temp;
+		  }
+		  public void Info() {
+			  System.out.println("X:"+x);
+		  }
+	  }class B extends A{
+		  private int y;
+		  B(){
+			  y = 0;
+		  }
+		  public int Get_Y() {
+			return y;  
+		  }
+		  public void Set_Y(int temp) {
+			  y = temp;
+		  }
+		  public void Info(int i) {
+			 super.Info();
+			  System.out.println("Y:"+y);
+		  }
+	  }
+
+  abstract class Quiz {
+	 
+	  public static String[] strings;
+
+	public static void main(String args[]) {
+	       Scanner C = new Scanner(System.in);
+	        strings = new String[6];
+		boolean was = false;
+        for (int i = 0; i < 6; i++){
+            String temp = new String();
+            temp = C.nextLine();
+            strings[i] = temp;
+        }
+                for (int i = 0; i < 5; i++){
+                	System.out.println(i);
+                    if (strings[i] != null){
+                    for (int j = i; j < 6; j++){
+                        if (strings[j] != null){
+                        if (strings[i].equals(strings[j])){
+                            strings[j] = null;
+                            was = true;
+                        }
+                    }
+                    
+                }
+                    
+                    if (was == true){
+                        strings[i] = null;
+                        was = false;
+                    }
+                    }
+                }
+        for (int i = 0; i < strings.length; i++) {
+            System.out.print(strings[i] + ", ");
+        }
+	}
+}

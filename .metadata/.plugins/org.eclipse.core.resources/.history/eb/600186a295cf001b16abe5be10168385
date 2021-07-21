@@ -1,0 +1,46 @@
+package lk;
+
+class A{
+		  private int x;
+		  A(){
+			  x = -1;
+		  }
+		  public int Get_X() {
+			return x;  
+		  }
+		  public void Set_X(int temp) {
+			  x = temp;
+		  }
+		  public void Info() {
+			  System.out.println("X:"+x);
+		  }
+	  }class B extends A{
+		  private int y;
+		  B(){
+			  y = 0;
+		  }
+		  public int Get_Y() {
+			return y;  
+		  }
+		  public void Set_Y(int temp) {
+			  y = temp;
+		  }
+		  public void Info(int i) {
+			 super.Info();
+			  System.out.println("Y:"+y);
+		  }
+	  }
+
+  abstract class Quiz {
+	 
+	  
+	public static void main(String args[]) {
+		A a = new A();
+		B b = new B();
+		a.Set_X(5);
+		b.Set_Y(20);
+		b.Info();
+		a = b;
+System.out.println((a.equals(b)));
+	}
+}
